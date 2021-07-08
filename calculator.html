@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>online calculator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript">
+		function insert(num){
+			document.form.textview.value = document.form.textview.value+num;
+		}
+		function equal(){
+			var exp=document.form.textview.value;
+			if(exp){
+			document.form.textview.value = eval(exp)
+		     }}
+		function clean(){
+			document.form.textview.value="";
+		   }
+		function back(){
+			var exp=document.form.textview.value;
+			document.form.textview.value=exp.substring(0,exp.length-1);  
+		}
+	</script>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}  
+
+		a{
+          border: 1px solid #fff;
+          padding: 12px 30px;
+          float: right;
+          transition: 0.8s ease;
+          border-radius: 25px;
+          color: #fff;
+		}
+
+		a:hover{
+			background-color:#2E94E3 ;
+			color: #fff;
+		}
+
+		.btn{
+			width: 50px;
+			height: 50px;
+			font-size: 25px;
+			margin: 2px;
+			cursor: pointer;
+			background-color: #10101E;
+			border: 1px solid #2E94E3;
+			color: #fff;
+		}
+
+        .btn:hover{
+        	background-color:#2E94E3 ;
+        	color: #fff;
+        }
+
+		.textview{
+			width: 198px;
+			margin: 5px;
+			font-size: 25px;
+			padding: 5px;
+			color: #fff;
+			background-color: #10101E;
+			border: 5px solid #2E94E3;
+		}
+		.main{
+			position: absolute;
+			top: 40%;
+			left: 20%;
+			transform: translate(-50%,-50%);
+			background: rgba(0, 0, 0, 0.5);
+			
+			-webkit-box-reflect: below 1px linear-gradient(transparent, rgba(225,225,225,0.1));
+		}
+        body{
+        	background:#10101E;
+        }
+
+        h1{
+        	color: #fff;
+
+        }
+
+	</style>
+</head>  
+<body>
+	<div class="bg"></div>
+ <div class="main">
+ 	<h1>CALCULATOR</h1>
+ 	 <form name="form">
+ 	 	<input class="textview" name="textview">
+ 	 </form>
+ 	 <table>
+ 	 	<tr>
+ 	 		<td><input class="btn" type="button" value="C" onclick="clean()"></td>
+ 	 		<td><input class="btn" type="button" value="<" onclick="back()"></td>
+ 	 		<td><input class="btn" type="button" value="/" onclick="insert('/')"></td>
+ 	 		<td><input class="btn" type="button" value="*" onclick="insert('*')"></td>
+ 	 	</tr>
+ 	 	<tr>
+ 	 		<td><input class="btn" type="button" value="7" onclick="insert(7)"></td>
+ 	 		<td><input class="btn" type="button" value="8" onclick="insert(8)"></td>
+ 	 		<td><input class="btn" type="button" value="9" onclick="insert(9)"></td>
+ 	 		<td><input class="btn" type="button" value="-" onclick="insert('-')"></td>
+ 	 	</tr>
+ 	 	<tr>
+ 	 		<td><input class="btn" type="button" value="4" onclick="insert(4)"></td>
+ 	 		<td><input class="btn" type="button" value="5" onclick="insert(5)"></td>
+ 	 		<td><input class="btn" type="button" value="6" onclick="insert(6)"></td>
+ 	 		<td><input class="btn" type="button" value="+" onclick="insert('+')"></td>
+ 	 	</tr>
+ 	 	<tr>
+ 	 		<td><input class="btn" type="button" value="1" onclick="insert(1)"></td>
+ 	 		<td><input class="btn" type="button" value="2" onclick="insert(2)"></td>
+ 	 		<td><input class="btn" type="button" value="3" onclick="insert(3)"></td>
+ 	 		<td rowspan="2"><input class="btn" style="height:103px;"  type="button" value="=" onclick="equal()"></td>
+ 	 	</tr>
+ 	 	<tr>
+ 	 		<td class="h" colspan=2><input class="btn"type="button" style="width: 106px;" value="0" onclick="insert(0)"></td>
+ 	 		<td><input class="btn"type="button" value="." onclick="insert('.')"></td>
+ 	 		
+ 	 	</tr>
+ 	 </table>
+ </div>
+  <a target="_blank" href="https://yaswanth2021.github.io/yaswanth2021.github/">Devloper</a>
+</body>
+</html>
